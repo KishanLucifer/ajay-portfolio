@@ -2,9 +2,8 @@ import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
 import { PageInfo, Social } from "@/typings";
-import { SocialIcon } from "react-social-icons";
 
-type Props = { pageInfo: PageInfo; socials: Social[] };
+type Props = { pageInfo: PageInfo };
 
 type Inputs = {
   name: string;
@@ -13,7 +12,7 @@ type Inputs = {
   message: string;
 };
 
-function ContactMe({ pageInfo, socials }: Props) {
+function ContactMe({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit = (formData: Inputs) => {
     const emailBody = `Hi, my name is ${formData.name}. ${formData.message}\n(${formData.email})`;
