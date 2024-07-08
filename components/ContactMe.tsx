@@ -40,7 +40,7 @@ function ContactMe({ pageInfo }: Props) {
             className="flex items-center space-x-3 justify-center"
             onClick={handlePhoneNumberClick}
           >
-            <PhoneIcon className="text-sky-400 h-4 w-4 animate-pulse" />
+            {/* <PhoneIcon className="text-sky-400 h-4 w-4 animate-pulse" /> */}
             <p className="text-sm md:text-xl xl:text-lg">
               {pageInfo.phoneNumber}
             </p>
@@ -51,10 +51,10 @@ function ContactMe({ pageInfo }: Props) {
             <p className="text-sm md:text-xl xl:text-lg">{pageInfo.email}</p>
           </div>
 
-          <div className="flex items-center space-x-3 justify-center">
+          {/* <div className="flex items-center space-x-3 justify-center">
             <MapPinIcon className="text-sky-400 h-4 w-4 animate-pulse" />
             <p className="text-sm md:text-xl xl:text-lg">{pageInfo.address}</p>
-          </div>
+          </div> */}
         </div>
 
         {/* <form
