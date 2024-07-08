@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import React from 'react';
-import { Project } from '../typings';
-import { urlFor } from '@/sanity';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import React from "react";
+import { Project } from "../typings";
+import { urlFor } from "@/sanity";
+import Image from "next/image";
 
 type Props = {
   projects: Project[];
@@ -33,7 +33,7 @@ function Projects({ projects }: Props) {
             className="w-screen flex-shrink-0 snap-center flex flex-col items-center justify-center p-6 md:p-44"
           >
             <a
-              href={project?.linkToBuild ? project?.linkToBuild : ''}
+              href={project?.linkToBuild ? project?.linkToBuild : ""}
               target="_blank"
             >
               <motion.img
@@ -53,7 +53,7 @@ function Projects({ projects }: Props) {
               <h4 className="text-lg xl:text-3xl md:text-3xl font-semibold text-center">
                 <span className=" text-white">
                   Case Study {i + 1} of {projects.length}:
-                </span>{' '}
+                </span>{" "}
                 {project?.title}
               </h4>
 
