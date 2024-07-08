@@ -16,7 +16,7 @@ function ContactMe({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit = (formData: Inputs) => {
     const emailBody = `Hi, my name is ${formData.name}. ${formData.message}\n(${formData.email})`;
-    window.location.href = `mailto:ajay.dev2103@gmail.com?subject=${formData.subject}&body=${emailBody}`;
+    window.location.href = `mailto:ajay.varsur21@gmail.com?subject=${formData.subject}&body=${emailBody}`;
   };
   const handlePhoneNumberClick = () => {
     if (pageInfo.phoneNumber) {
@@ -46,10 +46,10 @@ function ContactMe({ pageInfo }: Props) {
             </p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
+          {/* <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-sky-400 h-4 w-4 animate-pulse" />
             <p className="text-sm md:text-xl xl:text-lg">{pageInfo.email}</p>
-          </div>
+          </div> */}
 
           {/* <div className="flex items-center space-x-3 justify-center">
             <MapPinIcon className="text-sky-400 h-4 w-4 animate-pulse" />
