@@ -49,17 +49,17 @@ export interface Project extends SanityBody {
   summary: string;
 }
 
-// export interface Experience extends SanityBody {
-//   _type: "experience";
-//   compagny: "string";
-//   companyImage: Image;
-//   dateEnded: Date;
-//   dateStarted: Date;
-//   isCurrentlyWorkingHere: boolean;
-//   jobTitle: string;
-//   points: string[];
-//   technologies: Technology[];
-// }
+export interface Experience extends SanityBody {
+  _type: "experience";
+  compagny: "string";
+  companyImage: Image;
+  dateEnded: Date;
+  dateStarted: Date;
+  isCurrentlyWorkingHere: boolean;
+  jobTitle: string;
+  points: string[];
+  technologies: Technology[];
+}
 
 export interface Social extends SanityBody {
   _type: "social";
