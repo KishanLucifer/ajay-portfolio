@@ -19,15 +19,15 @@ export default async function handler(
       port: 465,
       secure: true,
       auth: {
-        user: `ajay.varsur21@gmail.com`, // replace with your email
-        pass: `nitl xzbj zoqh fdzg`, // replace with your email password or use environment variables
+        user: process.env.EMAIL, // replace with your email
+        pass: process.env.PASS, // replace with your email password or use environment variables
       },
     });
 
     try {
       const info = await transporter.sendMail({
-        from: "ajay.varsur21@gmail.com",
-        to: "ajay.varsur21@gmail.com", // replace with your email or recipient's email
+        from: process.env.EMAIL,
+        to: process.env.EMAIL, // replace with your email or recipient's email
         subject: subject,
         text: `From: ${name} <${email}>\n\n${message}`,
       });
