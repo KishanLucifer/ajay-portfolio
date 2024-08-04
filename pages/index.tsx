@@ -1,21 +1,21 @@
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import ContactMe from '@/components/ContactMe';
-import { PageInfo, Project, Skill, Social } from '../typings';
-import { fetchPageInfo } from '../utils/fetchPageInfo';
-import { fetchProjects } from '../utils/fetchProjects';
-import { fetchSkills } from '../utils/fetchSkills';
-import { fetchSocials } from '../utils/fetchSocial';
-import React from 'react';
-import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import ContactMe from "@/components/ContactMe";
+import { PageInfo, Project, Skill, Social } from "../typings";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchSocials } from "../utils/fetchSocial";
+import React from "react";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 // import Link from 'next/link';
-import Footer from '@/components/Footer';
+import Footer from "@/components/Footer";
 // import Image from 'next/image';
-import { urlFor } from '@/sanity';
-import Link from 'next/link';
-import Image from 'next/image';
+import { urlFor } from "@/sanity";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -86,7 +86,7 @@ export async function getStaticProps() {
       revalidate: 10,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error("Error fetching data:", error);
     return {
       props: {
         pageInfo: {},
