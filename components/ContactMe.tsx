@@ -270,8 +270,6 @@
 
 // export default ContactMe;
 
-// components/ContactMe.tsx
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
@@ -304,7 +302,7 @@ function ContactMe({ pageInfo }: Props) {
 
       if (response.ok) {
         toast.success("Message sent successfully!", {
-          position: "top-right",
+          position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
