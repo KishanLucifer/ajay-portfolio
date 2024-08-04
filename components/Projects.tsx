@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React from "react";
 import { Project } from "../typings";
 import { urlFor } from "@/sanity";
-import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
 
 type Props = {
   projects: Project[];
