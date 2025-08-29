@@ -1,4 +1,3 @@
-import getExperiences from "../pages/api/getExperiences";
 import { Experience } from "../typings";
 
 export const fetchExperiences = async () => {
