@@ -18,37 +18,32 @@ export default function Header({ socials }: Props) {
         initial={{ x: -500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="flex flex-row items-center gap-2"
+        className="flex flex-row items-center"
       >
         {socials.map((social) => (
-          <div key={social._id} className="hover:scale-110 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)]">
-            <SocialIcon
-              url={social.url}
-              fgColor="#D4AF37"
-              bgColor="transparent"
-              target="_blank"
-              style={{ height: 45, width: 45 }}
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            />
-          </div>
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+            target="_blank"
+          />
         ))}
       </motion.div>
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="group flex flex-row items-center cursor-pointer px-4 py-1.5 rounded-sm border border-transparent hover:border-[#8A0303]/50 hover:bg-[#8A0303]/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(138,3,3,0.4)]"
+        className="flex flex-row items-center text-gray-300 cursor-pointer"
         onClick={handleClick}
       >
         <SocialIcon
           network="email"
           url="#contact"
-          fgColor="#D4AF37"
+          fgColor="gray"
           bgColor="transparent"
-          style={{ height: 45, width: 45 }}
-          className="group-hover:animate-pulse"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-[#D4AF37]/80 font-bold tracking-widest group-hover:text-white transition-colors">
+        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
           Get In Touch
         </p>
       </motion.div>

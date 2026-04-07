@@ -64,13 +64,13 @@ function ContactMe({ pageInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="flex flex-col relative min-h-screen text-center md:text-left max-w-7xl px-6 mx-auto items-center justify-center pt-32 pb-32"
     >
-      <h3 className="uppercase tracking-[15px] md:tracking-[20px] text-[#D4AF37]/80 text-xl md:text-2xl mb-16 md:mb-20 font-bold text-center drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
-        Contract Me
+      <h3 className="uppercase tracking-[15px] md:tracking-[20px] text-[#1DA1F2]/60 text-xl md:text-2xl mb-16 md:mb-20 font-light text-center">
+        Contact
       </h3>
 
       <div className="flex flex-col space-y-10 w-full max-w-2xl mx-auto z-10 relative">
         {/* Glow backdrop */}
-        <div className="absolute inset-0 bg-[#8A0303]/10 blur-[100px] rounded-full -z-10" />
+        <div className="absolute inset-0 bg-[#1DA1F2]/5 blur-[100px] rounded-full -z-10" />
 
         <div className="flex flex-col space-y-8">
           <motion.div
@@ -78,7 +78,7 @@ function ContactMe({ pageInfo }: Props) {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex items-center space-x-3 justify-center text-[#D4AF37] cursor-pointer hover:underline underline-offset-8 decoration-[#8A0303]/80 decoration-2 transition-all"
+            className="flex items-center space-x-3 justify-center text-[#1DA1F2] cursor-pointer hover:underline underline-offset-8 decoration-[#1DA1F2]/50 decoration-2 transition-all"
             onClick={handlePhoneNumberClick}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 animate-pulse">
@@ -98,7 +98,7 @@ function ContactMe({ pageInfo }: Props) {
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col space-y-4 w-full p-8 md:p-10 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-[#D4AF37]/20 rounded-md shadow-[0_0_40px_rgba(138,3,3,0.15)]"
+              className="flex flex-col space-y-4 w-full p-8 md:p-10 bg-[#0e1e2b]/50 backdrop-blur-xl border border-[#1DA1F2]/20 rounded-3xl shadow-[0_0_40px_rgba(29,161,242,0.1)]"
             >
               <div className="flex flex-col md:flex-row gap-4">
                 <input
@@ -138,11 +138,11 @@ function ContactMe({ pageInfo }: Props) {
               
               <button
                 type="submit"
-                className="group relative w-full bg-transparent overflow-hidden text-[#D4AF37] border border-[#D4AF37] border-opacity-50 hover:border-transparent py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all duration-300 mt-2 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-[0_0_30px_rgba(138,3,3,0.4)]"
+                className="group relative w-full bg-transparent overflow-hidden text-[#1DA1F2] border border-[#1DA1F2] hover:border-transparent py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all duration-300 mt-2"
               >
-                <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#8A0303] to-[#8A0303]/80 transition-all duration-500 ease-out group-hover:w-full" />
+                <div className="absolute inset-0 w-0 bg-[#1DA1F2] transition-all duration-500 ease-out group-hover:w-full" />
                 <span className="relative group-hover:text-white transition-colors duration-300">
-                  Accept Contract
+                  Submit Message
                 </span>
               </button>
             </form>

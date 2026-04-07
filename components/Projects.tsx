@@ -37,9 +37,9 @@ const ProjectItem = ({ project, index, total }: { project: Project; index: numbe
         <a
           href={project?.linkToBuild ? project?.linkToBuild : "#"}
           target="_blank"
-          className="w-full relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(212,175,55,0.15)] hover:shadow-[0_0_60px_rgba(138,3,3,0.4)] hover:-translate-y-2 transition-all duration-500 ease-out z-20 border border-gray-800"
+          className="w-full relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(29,161,242,0.15)] hover:shadow-[0_0_60px_rgba(29,161,242,0.4)] hover:-translate-y-2 transition-all duration-500 ease-out z-20 border border-[#1DA1F2]/20"
         >
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
+          <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
           
           {project.videoUrl ? (
              <video
@@ -62,8 +62,8 @@ const ProjectItem = ({ project, index, total }: { project: Project; index: numbe
             />
           )}
 
-          {/* Red Glow overlay on hover */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-gradient-to-tr from-[#8A0303] to-transparent mix-blend-overlay transition-opacity duration-500 z-20" />
+          {/* Twitter Blue Glow overlay on hover */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-tr from-[#1DA1F2] to-transparent mix-blend-overlay transition-opacity duration-500 z-20" />
         </a>
       </div>
 
@@ -74,16 +74,16 @@ const ProjectItem = ({ project, index, total }: { project: Project; index: numbe
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold tracking-[0.3em] text-[#8A0303] uppercase"
+            className="text-sm font-semibold tracking-[0.2em] text-[#1DA1F2] uppercase"
           >
-            Contract {index + 1} of {total}
+            Case Study {index + 1} of {total}
           </motion.p>
           <motion.h4 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-[#D4AF37] to-[#D4AF37]"
+            className="text-3xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-[#1DA1F2]"
           >
             {project?.title}
           </motion.h4>
@@ -107,16 +107,16 @@ const ProjectItem = ({ project, index, total }: { project: Project; index: numbe
             >
               <div className="relative">
                 {/* Tech glowing background */}
-                <div className="absolute inset-0 bg-[#8A0303] blur-md opacity-20 rounded-full group-hover/tech:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 bg-[#1DA1F2] blur-md opacity-20 rounded-full group-hover/tech:opacity-60 transition-opacity" />
                 <img
-                  className="relative h-12 w-12 md:h-14 md:w-14 p-2.5 bg-[#0a0a0a] rounded-full backdrop-blur-xl border border-gray-800 shadow-lg group-hover/tech:scale-110 group-hover/tech:border-[#8A0303] filter grayscale group-hover/tech:grayscale-0 transition-all duration-300"
+                  className="relative h-12 w-12 md:h-14 md:w-14 p-2.5 bg-[#0e1e2b] rounded-full backdrop-blur-xl border border-[#1DA1F2]/30 shadow-lg group-hover/tech:scale-110 transition-transform duration-300"
                   src={urlFor(technology?.image).url()}
                   alt={technology.title}
                 />
               </div>
               
               {/* Tooltip */}
-              <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/tech:opacity-100 transition-opacity bg-[#8A0303] border border-red-500/30 text-gray-200 text-xs px-3 py-1.5 rounded-sm whitespace-nowrap z-50 pointer-events-none text-center shadow-[0_0_15px_rgba(138,3,3,0.5)] font-bold tracking-widest uppercase">
+              <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/tech:opacity-100 transition-opacity bg-[#1DA1F2] text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap z-50 pointer-events-none text-center shadow-lg font-medium tracking-wide">
                 {technology.title}
               </span>
             </motion.div>
@@ -145,11 +145,11 @@ const ProjectItem = ({ project, index, total }: { project: Project; index: numbe
           <a 
             href={project?.linkToBuild ? project?.linkToBuild : "#"}
             target="_blank"
-            className="group relative px-6 md:px-8 py-3.5 bg-transparent overflow-hidden rounded-sm font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-[#D4AF37] border border-[#D4AF37] transition-all hover:scale-105 hover:border-[#8A0303] hover:shadow-[0_0_20px_rgba(138,3,3,0.4)]"
+            className="group relative px-6 md:px-8 py-3.5 bg-transparent overflow-hidden rounded-full font-semibold text-xs md:text-sm tracking-widest text-[#1DA1F2] border border-[#1DA1F2] transition-all hover:scale-105"
           >
-            <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#8A0303] to-[#8A0303]/80 transition-all duration-300 ease-out group-hover:w-full" />
+            <div className="absolute inset-0 w-0 bg-[#1DA1F2] transition-all duration-300 ease-out group-hover:w-full" />
             <span className="relative group-hover:text-white transition-colors duration-300 whitespace-nowrap">
-              View Contract
+              View Project
             </span>
           </a>
 
@@ -182,7 +182,7 @@ function Projects({ projects }: Props) {
       transition={{ duration: 1.5 }}
       className="relative flex flex-col text-left max-w-[90rem] px-6 mx-auto items-center justify-center pt-32 pb-32 z-0 min-h-screen"
     >
-      <h3 className="uppercase tracking-[15px] md:tracking-[20px] text-[#D4AF37]/80 text-xl md:text-2xl mb-20 md:mb-32 font-bold text-center drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+      <h3 className="uppercase tracking-[15px] md:tracking-[20px] text-[#1DA1F2]/60 text-xl md:text-2xl mb-20 md:mb-32 font-light text-center">
         Projects
       </h3>
 
@@ -193,8 +193,8 @@ function Projects({ projects }: Props) {
       </div>
 
       {/* Decorative background elements */}
-      <div className="w-full absolute top-[30%] bg-[#8A0303]/5 left-0 h-[600px] -skew-y-12 blur-[150px] -z-10" />
-      <div className="w-full absolute top-[60%] right-0 bg-[#D4AF37]/5 w-[500px] h-[500px] rounded-full blur-[120px] -z-10" />
+      <div className="w-full absolute top-[30%] bg-[#1DA1F2]/5 left-0 h-[600px] -skew-y-12 blur-3xl -z-10" />
+      <div className="w-full absolute top-[60%] right-0 bg-[#1DA1F2]/5 w-[500px] h-[500px] rounded-full blur-[120px] -z-10" />
     </motion.div>
   );
 }

@@ -13,13 +13,13 @@ type Props = {
 
 export default function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
-    words: [`${pageInfo?.name}`, "Baba Yaga", "The Continental"],
+    words: [`${pageInfo?.name}`, "Creative Developer", "<BuilderOfDigitalExperiences />"],
     loop: true,
     delaySpeed: 2000,
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-12 items-center justify-center text-center overflow-hidden bg-[#050505]">
+    <div className="h-screen flex flex-col space-y-12 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
       
       <div className="z-20 flex flex-col items-center">
@@ -30,11 +30,11 @@ export default function Hero({ pageInfo }: Props) {
             transition={{ duration: 1.5, type: "spring", bounce: 0.4 }}
             className="relative mb-8"
           >
-            {/* Dark amber halo */}
-            <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#D4AF37] to-[#8A0303] rounded-full blur-sm opacity-60 animate-pulse" />
+            {/* Glowing avatar ring */}
+            <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#1DA1F2] to-transparent rounded-full blur-sm opacity-50 animate-pulse" />
             
             <Image
-              className="relative rounded-full h-32 w-32 object-cover border-[3px] border-[#0a0a0a] shadow-2xl grayscale"
+              className="relative rounded-full h-32 w-32 object-cover border-4 border-[#0e1e2b] shadow-2xl"
               src={urlFor(pageInfo?.heroImage).url()}
               alt="Profile Picture"
               priority
@@ -50,19 +50,19 @@ export default function Hero({ pageInfo }: Props) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="space-y-6"
         >
-          <h2 className="text-sm md:text-md uppercase text-[#D4AF37] pb-2 tracking-[20px] font-bold bg-clip-text">
+          <h2 className="text-sm md:text-md uppercase text-[#1DA1F2] pb-2 tracking-[15px] font-semibold bg-clip-text">
             {pageInfo?.role}
           </h2>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold px-10">
-            <span className="mr-3 bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600">
+            <span className="mr-3 bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
               {text}
             </span>
-            <Cursor cursorColor="#8A0303" />
+            <Cursor cursorColor="#1DA1F2" />
           </h1>
         </motion.div>
 
-        {/* Action Buttons */}
+        {/* Premium Action Buttons */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,9 +72,9 @@ export default function Hero({ pageInfo }: Props) {
           {["about", "skills", "projects"].map((section) => (
             <Link key={section} href={`#${section}`}>
               <button 
-                className="group relative px-6 md:px-10 py-3 md:py-4 bg-[#0a0a0a]/80 backdrop-blur-md overflow-hidden rounded-sm font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-gray-500 border border-gray-800 transition-all duration-300 hover:border-[#8A0303]/60 hover:shadow-[0_0_20px_rgba(138,3,3,0.4)]"
+                className="group relative px-6 md:px-10 py-3 md:py-4 bg-[#0e1e2b]/50 backdrop-blur-md overflow-hidden rounded-full font-semibold text-xs md:text-sm tracking-[0.2em] uppercase text-gray-400 border border-gray-800 transition-all duration-300 hover:border-[#1DA1F2]/50 hover:shadow-[0_0_20px_rgba(29,161,242,0.2)] hover:-translate-y-1"
               >
-                <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#8A0303]/80 to-[#D4AF37]/20 transition-all duration-500 ease-out group-hover:w-full" />
+                <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#1DA1F2]/20 to-transparent transition-all duration-500 ease-out group-hover:w-full" />
                 <span className="relative group-hover:text-white transition-colors duration-300">
                   {section}
                 </span>
