@@ -13,7 +13,7 @@ type Props = {
 
 export default function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
-    words: [`${pageInfo?.name}`, "Creative Developer", "<BuilderOfDigitalExperiences />"],
+    words: [`${pageInfo?.name}`, "A Guy Who Is Vegan", "<LoveToCodeMore />"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -21,10 +21,10 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <div className="h-screen flex flex-col space-y-12 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      
+
       <div className="z-20 flex flex-col items-center">
         {pageInfo?.heroImage && (
-          <motion.div 
+          <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, type: "spring", bounce: 0.4 }}
@@ -32,7 +32,7 @@ export default function Hero({ pageInfo }: Props) {
           >
             {/* Glowing avatar ring */}
             <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#1DA1F2] to-transparent rounded-full blur-sm opacity-50 animate-pulse" />
-            
+
             <Image
               className="relative rounded-full h-32 w-32 object-cover border-4 border-[#0e1e2b] shadow-2xl"
               src={urlFor(pageInfo?.heroImage).url()}
@@ -44,7 +44,7 @@ export default function Hero({ pageInfo }: Props) {
           </motion.div>
         )}
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -63,7 +63,7 @@ export default function Hero({ pageInfo }: Props) {
         </motion.div>
 
         {/* Premium Action Buttons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -71,9 +71,7 @@ export default function Hero({ pageInfo }: Props) {
         >
           {["about", "skills", "projects"].map((section) => (
             <Link key={section} href={`#${section}`}>
-              <button 
-                className="group relative px-6 md:px-10 py-3 md:py-4 bg-[#0e1e2b]/50 backdrop-blur-md overflow-hidden rounded-full font-semibold text-xs md:text-sm tracking-[0.2em] uppercase text-gray-400 border border-gray-800 transition-all duration-300 hover:border-[#1DA1F2]/50 hover:shadow-[0_0_20px_rgba(29,161,242,0.2)] hover:-translate-y-1"
-              >
+              <button className="group relative px-6 md:px-10 py-3 md:py-4 bg-[#0e1e2b]/50 backdrop-blur-md overflow-hidden rounded-full font-semibold text-xs md:text-sm tracking-[0.2em] uppercase text-gray-400 border border-gray-800 transition-all duration-300 hover:border-[#1DA1F2]/50 hover:shadow-[0_0_20px_rgba(29,161,242,0.2)] hover:-translate-y-1">
                 <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#1DA1F2]/20 to-transparent transition-all duration-500 ease-out group-hover:w-full" />
                 <span className="relative group-hover:text-white transition-colors duration-300">
                   {section}
