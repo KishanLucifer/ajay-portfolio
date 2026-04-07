@@ -4,7 +4,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 import { Project } from "../../typings";
 
-const query = groq`*[_type == "project"]{
+const query = groq`*[_type == "project"] | order(orderRank) {
   ..., 
   technologies[]->,
   "videoUrl": video

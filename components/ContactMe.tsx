@@ -41,7 +41,7 @@ function ContactMe({ pageInfo }: Props) {
           progress: undefined,
           theme: "dark",
         });
-        reset(); 
+        reset();
       } else {
         toast.error("Failed to send message.", { theme: "dark" });
       }
@@ -68,77 +68,90 @@ function ContactMe({ pageInfo }: Props) {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10 w-full max-w-2xl mx-auto z-10 relative">
+      <div className="flex flex-col w-full max-w-4xl mx-auto z-10 relative px-2 md:px-6">
         {/* Glow backdrop */}
-        <div className="absolute inset-0 bg-[#1DA1F2]/5 blur-[100px] rounded-full -z-10" />
+        <div className="absolute inset-0 bg-[#1DA1F2]/5 blur-[120px] rounded-full -z-10" />
 
-        <div className="flex flex-col space-y-8">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex items-center space-x-3 justify-center text-[#1DA1F2] cursor-pointer hover:underline underline-offset-8 decoration-[#1DA1F2]/50 decoration-2 transition-all"
-            onClick={handlePhoneNumberClick}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 animate-pulse">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
-            </svg>
-            <p className="text-xl md:text-3xl font-light tracking-wider">
-              {pageInfo.phoneNumber}
-            </p>
-          </motion.div>
+        <div className="flex flex-col space-y-10">
+          {pageInfo?.phoneNumber && (
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="flex items-center space-x-4 justify-center text-[#1DA1F2] cursor-pointer hover:underline underline-offset-8 decoration-[#1DA1F2]/50 decoration-2 transition-all w-full md:w-auto mx-auto"
+              onClick={handlePhoneNumberClick}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-7 md:h-7 animate-pulse"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z"
+                />
+              </svg>
+              <p className="text-xl md:text-3xl font-light tracking-widest text-center truncate">
+                {pageInfo.phoneNumber}
+              </p>
+            </motion.div>
+          )}
 
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="w-full"
+            className="w-full flex justify-center"
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col space-y-4 w-full p-8 md:p-10 bg-[#0e1e2b]/50 backdrop-blur-xl border border-[#1DA1F2]/20 rounded-3xl shadow-[0_0_40px_rgba(29,161,242,0.1)]"
+              className="flex flex-col space-y-4 md:space-y-6 w-full max-w-2xl p-6 sm:p-8 md:p-12 bg-[#0e1e2b]/50 backdrop-blur-xl border border-[#1DA1F2]/20 rounded-[2rem] shadow-[0_0_50px_rgba(29,161,242,0.1)]"
             >
-              <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full">
                 <input
                   type="text"
                   placeholder="Name"
-                  className="contactInput"
+                  className="contactInput flex-1"
                   {...register("name", { required: true })}
                 />
                 <input
                   type="email"
                   placeholder="Email"
-                  className="contactInput"
+                  className="contactInput flex-1"
                   {...register("email", { required: true })}
                 />
               </div>
-              
+
               <input
                 type="text"
                 placeholder="Mobile"
-                className="contactInput"
+                className="contactInput w-full"
                 {...register("mobile", { required: true })}
               />
-              
+
               <input
                 type="text"
                 placeholder="Subject"
-                className="contactInput"
+                className="contactInput w-full"
                 {...register("subject", { required: true })}
               />
 
               <textarea
                 placeholder="Message"
                 rows={5}
-                className="contactInput"
+                className="contactInput w-full resize-none"
                 {...register("message", { required: true })}
               ></textarea>
-              
+
               <button
                 type="submit"
-                className="group relative w-full bg-transparent overflow-hidden text-[#1DA1F2] border border-[#1DA1F2] hover:border-transparent py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all duration-300 mt-2"
+                className="group relative w-full bg-transparent overflow-hidden text-[#1DA1F2] border border-[#1DA1F2] hover:border-transparent py-4 md:py-5 rounded-2xl font-bold uppercase tracking-widest text-sm md:text-base transition-all duration-300 mt-2 hover:shadow-[0_0_20px_rgba(29,161,242,0.3)]"
               >
                 <div className="absolute inset-0 w-0 bg-[#1DA1F2] transition-all duration-500 ease-out group-hover:w-full" />
                 <span className="relative group-hover:text-white transition-colors duration-300">
@@ -147,7 +160,7 @@ function ContactMe({ pageInfo }: Props) {
               </button>
             </form>
           </motion.div>
-          
+
           <ToastContainer
             position="top-center"
             autoClose={3000}
