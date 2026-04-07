@@ -18,6 +18,12 @@ export default {
       },
     },
     {
+      name: "video",
+      title: "Video URL",
+      description: "Paste a direct video URL (e.g. from Cloudinary, Imgur, or a hosted .mp4 link) to avoid large payload network timeouts",
+      type: "url",
+    },
+    {
       name:"summary",
       title: "Summary",
       type:"text",
@@ -32,6 +38,12 @@ export default {
       name:"linkToBuild",
       title:"LinkToBuild",
       type:"url",
+    },
+    {
+      name: "githubLink",
+      title: "GitHub Link",
+      description: "Direct link to the GitHub repository",
+      type: "url",
     },
   ],
 }

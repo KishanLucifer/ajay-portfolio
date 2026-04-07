@@ -5,7 +5,9 @@ import { sanityClient } from "../../sanity";
 import { Project } from "../../typings";
 
 const query = groq`*[_type == "project"]{
-  ..., technologies[]->
+  ..., 
+  technologies[]->,
+  "videoUrl": video
 }`;
 
 type Data = {
