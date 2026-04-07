@@ -13,6 +13,7 @@ type Inputs = {
   name: string;
   email: string;
   subject: string;
+  mobile: number;
   message: string;
 };
 
@@ -41,11 +42,11 @@ function ContactMe({ pageInfo }: Props) {
         });
         reset(); // Reset form after successful submission
       } else {
-        toast.error("Failed to send message.");
+        toast.error("Failed to send message1.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      toast.error("Failed to send message.");
+      toast.error("Failed to send message2.");
     }
   };
 
@@ -92,11 +93,20 @@ function ContactMe({ pageInfo }: Props) {
             <div className="mb-4">
               <input
                 type="text"
+                placeholder="Mobile"
+                className="contactInput"
+                {...register("mobile", { required: true })}
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="text"
                 placeholder="Subject"
                 className="contactInput"
                 {...register("subject", { required: true })}
               />
             </div>
+
             <div className="mb-4">
               <textarea
                 placeholder="Message"
